@@ -2,6 +2,50 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  const nine = $("#hour-9");
+  nine.click(function() {
+    alert("Success");
+  })
+
+  const ten = $("#hour-10");
+  ten.click(function() {
+    alert("Success");
+  })
+
+  const eleven = $("#hour-11");
+  eleven.click(function() {
+    alert("Success");
+  })
+
+  const tweleve = $("#hour-12");
+  tweleve.click(function() {
+    alert("Success");
+  })
+
+  const one = $("#hour-1");
+  one.click(function() {
+    alert("Success");
+  })
+
+  const two = $("#hour-2");
+  two.click(function() {
+    alert("Success");
+  })
+
+  const three = $("#hour-3");
+  three.click(function() {
+    alert("Success");
+  })
+
+  const four = $("#hour-4");
+  four.click(function() {
+    alert("Success");
+  })
+
+  const five = $("#hour-5");
+  five.click(function() {
+    alert("Success");
+  })
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener

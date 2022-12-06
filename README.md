@@ -16,6 +16,8 @@ To use this website, the user will input any activities they want to complete, a
 
 ## Screenshot of Website
 
+![Daily Planner Screenshot](/Assets/daily-planner-screenshot.png)
+
 ## License
 
 MIT License

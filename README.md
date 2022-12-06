@@ -14,6 +14,8 @@ To use this website, the user will input any activities they want to complete, a
 
 ## Website Link
 
+https://ryanstephens6.github.io/daily-planner/
+
 ## Screenshot of Website
 
 ![Daily Planner Screenshot](/Assets/daily-planner-screenshot.png)

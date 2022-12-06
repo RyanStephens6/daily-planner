@@ -14,7 +14,6 @@ $(function () {
 
   //Event listner for save buttons
   const saveButton = $(".saveBtn");
-  console.log(saveButton);
   saveButton.click(function() {
     //Will save text to local storage depending on which save button was pressed
     var hour = $(this).parent().attr('id');
@@ -57,7 +56,14 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
+
+  for(let i=9; i<18; i++) {
+    var id = "hour-" +i;
+    var storedText = localStorage.getItem(id);
+    var hourElement = document.getElementById(id);
+    hourElement.children[1].value = storedText;
+  }
+
   // TODO: Add code to display the current date in the header of the page.
   $("#currentDay").text(clock.format('MMM D, YYYY'))
 });

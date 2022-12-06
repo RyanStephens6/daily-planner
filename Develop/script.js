@@ -2,9 +2,9 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  //Clock displaying the current day in the header
+  //Realtime clock
   var clock = dayjs();
-  $("#currentDay").text(clock.format('MMM D, YYYY'))
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -14,6 +14,7 @@ $(function () {
 
   //Event listner for save buttons
   const saveButton = $(".saveBtn");
+  console.log(saveButton);
   saveButton.click(function() {
     //Will save text to local storage depending on which save button was pressed
     var hour = $(this).parent().attr('id');
@@ -27,11 +28,36 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  
+  //Sets current hour to hour of realtime clock
+  var currentHour = clock.format("H");
+
+  //Gets element by ID for each hour time-block
+  for(let i =9; i < 18; i++) {
+    var id = "hour-" + i;
+    var hourElement = document.getElementById(id);
+
+    //Sets hour time-block to past if it is lower than the real time clock,
+    //present if it's the same as the real time clock, and future if it is
+    //above the real time clock
+    if(i < currentHour) {
+      hourElement.classList.add("past")
+      hourElement.classList.remove("present")
+      hourElement.classList.remove("future");
+    } else if (i === currentHour) {
+      hourElement.classList.remove("past");
+      hourElement.classList.add("present");
+      hourElement.classList.remove("future");
+    } else {
+      hourElement.classList.remove("past");
+      hourElement.classList.remove("present");
+      hourElement.classList.add("future");
+    }
+  }
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+  $("#currentDay").text(clock.format('MMM D, YYYY'))
 });
